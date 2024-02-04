@@ -1,0 +1,38 @@
+// I think my time complexity is probably O(n) because I'm
+// doing work that takes constant time inside a for loop
+// that's repeating n times. 
+
+public static int marsExploration(String s) {
+    // Write your code here
+    // count how long s is, divide it by 3
+    // SOS should be repeated as many times as that
+    // loop through characters in s; check if every 1st and 3rd character
+    // is S and if every 2nd character is O
+    // S is 83, O is 79
+    
+    // for (int i = 0; i < s.length(); i++) {  
+    //     if (s.codePointAt(i) != 83 && s.codePointAt(i) != 79) {
+    //         counter++;
+    //     }
+    // }
+    
+    int counter = 0;
+    
+    if (s.length() == 0) {
+        return counter;
+    }
+    
+    for (int i = 0; i < s.length(); i += 3) {
+        if (s.charAt(i) != 'S') {
+            counter++;
+        }
+        if (s.charAt(i + 1) != 'O') {
+            counter++;
+        }
+        if (s.charAt(i + 2) != 'S') {
+            counter++;
+        }
+    }
+    
+    return counter;
+    }
